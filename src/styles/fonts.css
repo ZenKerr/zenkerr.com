@@ -1,0 +1,11 @@
+@font-face {
+	src: url(/fonts/bebas-neue-cyrillic.woff2) format('woff2');
+	font-family: 'Bebas Neue Cyrillic';
+	font-display: swap;
+}
+
+@font-face {
+	src: url(/fonts/roboto.woff2) format('woff2');
+	font-family: 'Roboto';
+	font-display: swap;
+}

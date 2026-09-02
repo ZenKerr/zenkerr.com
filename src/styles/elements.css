@@ -1,0 +1,55 @@
+html {
+	background-color: var(--black);
+	scroll-behavior: smooth;
+
+	body {
+		animation: show-without-blur var(--long-transition) linear;
+		margin: 0;
+		background-color: var(--black);
+		user-select: none;
+
+		a {
+			outline: none;
+			text-decoration: none;
+		}
+
+		button {
+			outline: none;
+			border: none;
+			padding: 0;
+		}
+
+		img {
+			display: block;
+			pointer-events: none;
+		}
+
+		p {
+			margin: 0;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5 {
+			margin: 0;
+			font-weight: normal;
+		}
+
+		strong {
+			font-weight: normal;
+		}
+
+		hr {
+			margin: 0;
+			border: none;
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+	}
+}

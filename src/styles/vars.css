@@ -1,0 +1,59 @@
+:root {
+	--black: black;
+	--white: white;
+	--red: #a60100;
+
+	--title-font: 'Bebas Neue Cyrillic';
+	--text-font: 'Roboto';
+
+	--default-font-size: 2vh;
+	--medium-font-size: 3vh;
+	--large-font-size: 5vh;
+	--x-large-font-size: 7.5vh;
+
+	--default-border-radius: 2.5vh;
+	--children-border-radius: calc(var(--default-border-radius) - var(--x-small-space));
+	--circle-border-radius: 50%;
+
+	--default-border-width: 0.25vh;
+
+	--x-small-space: 0.5vh;
+	--small-space: 1.5vh;
+	--default-space: 2.5vh;
+	--large-space: 5vh;
+	--x-large-space: 10vh;
+	--negative-default-space: calc(var(--default-space) * -1);
+
+	--small-size: 3vh;
+	--default-size: 4vh;
+	--large-size: 5vh;
+	--half-screen-size: 50vh;
+
+	--default-blur: 1vh;
+
+	--default-transition: 0.15s;
+	--long-transition: 0.6s;
+
+	@media (max-aspect-ratio: 1 / 1) {
+		--default-font-size: 4vw;
+		--medium-font-size: 6vw;
+		--large-font-size: 10vw;
+		--x-large-font-size: 15vw;
+
+		--default-border-radius: 5vw;
+		--default-border-width: 0.5vw;
+
+		--x-small-space: 1vw;
+		--small-space: 3vw;
+		--default-space: 5vw;
+		--large-space: 10vw;
+		--x-large-space: 20vw;
+
+		--small-size: 6vw;
+		--default-size: 8vw;
+		--large-size: 10vw;
+		--half-screen-size: 50vw;
+
+		--default-blur: 2vw;
+	}
+}

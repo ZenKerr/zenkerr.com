@@ -1,0 +1,27 @@
+::view-transition-old(root) {
+	animation: hide var(--long-transition) linear;
+}
+
+::view-transition-new(root) {
+	animation: show var(--long-transition) linear;
+}
+
+@keyframes hide {
+	to {
+		opacity: 0;
+		filter: blur(var(--default-blur));
+	}
+}
+
+@keyframes show {
+	from {
+		opacity: 0;
+		filter: blur(var(--default-blur));
+	}
+}
+
+@keyframes show-without-blur {
+	from {
+		opacity: 0;
+	}
+}

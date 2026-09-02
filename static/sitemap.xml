@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://zenkerr.com/ru</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://zenkerr.com/ru"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zenkerr.com/en"/>
+    </url>
+    <url>
+        <loc>https://zenkerr.com/en</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://zenkerr.com/ru"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zenkerr.com/en"/>
+    </url>
+    <url>
+        <loc>https://zenkerr.com/terms-of-service/ru</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://zenkerr.com/terms-of-service/ru"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zenkerr.com/terms-of-service/en"/>
+    </url>
+    <url>
+        <loc>https://zenkerr.com/terms-of-service/en</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://zenkerr.com/terms-of-service/ru"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zenkerr.com/terms-of-service/en"/>
+    </url>
+</urlset>
