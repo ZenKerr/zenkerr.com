@@ -6,7 +6,7 @@
 	let isHidden = $state(true);
 	let withTransition = $state(false);
 
-	const handleScroll = () => (isHidden = window.scrollY === 0);
+	const handleScroll = () => (isHidden = window.scrollY <= 0);
 	const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
 	onMount(() => {
