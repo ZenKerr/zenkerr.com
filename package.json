@@ -1,14 +1,23 @@
 {
 	"name": "zenkerr.com",
 	"version": "1.0.0",
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"prepare": "svelte-kit sync",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json && eslint .",
-		"format": "prettier --write --cache ."
+	"engines": {
+		"node": "24.19.0"
 	},
+	"packageManager": "bun@1.4.0",
+	"private": true,
+	"type": "module",
+	"author": {
+		"name": "Ivan Sarnitskii",
+		"email": "ivan.sarnitskiy@mail.ru"
+	},
+	"license": "MIT AND CC-BY-NC-ND-4.0",
+	"description": "Personal website and portfolio",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ZenKerr/zenkerr.com"
+	},
+	"homepage": "https://zenkerr.com",
 	"dependencies": {
 		"phosphor-svelte": "3.1.0",
 		"svelte-meta-tags": "5.0.3"
@@ -32,6 +41,12 @@
 		"typescript-eslint": "8.71.1",
 		"vite": "8.3.3"
 	},
-	"private": true,
-	"type": "module"
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json && eslint .",
+		"format": "prettier --write --cache ."
+	}
 }
