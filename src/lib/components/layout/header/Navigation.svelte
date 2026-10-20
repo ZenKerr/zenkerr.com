@@ -11,6 +11,7 @@
 	const borderRadius = $derived(toggleButtonIsHovered ? [false] : [false, false, true, false]);
 	const className = $derived(isOpened ? 'opened' : undefined);
 
+	const navigation = { ru: 'Навигация', en: 'Navigation' };
 	const links = [
 		{
 			target: 'about-me',
@@ -41,16 +42,28 @@
 			},
 		},
 	];
+	const openNavigation = {
+		ru: 'Открыть навигацию',
+		en: 'Open navigation',
+	};
+	const closeNavigation = {
+		ru: 'Закрыть навигацию',
+		en: 'Close navigation',
+	};
+	const toggleNavigation = $derived(isOpened ? closeNavigation : openNavigation);
 </script>
 
 <Block id="header-navigation" class={className} {borderRadius}>
-	<nav>
+	<nav id="header-navigation-links" aria-label={localize(navigation)}>
 		{#each links as { target, text } (target)}
 			<a href={`#${target}`} onclick={() => (isOpened = false)}>{localize(text)}</a>
 		{/each}
 	</nav>
 	{#if isPhone}
 		<button
+			aria-label={localize(toggleNavigation)}
+			aria-controls="header-navigation-links"
+			aria-expanded={isOpened}
 			onmouseenter={() => (toggleButtonIsHovered = true)}
 			onmouseleave={() => (toggleButtonIsHovered = false)}
 			onfocus={(event) => (toggleButtonIsHovered = event.currentTarget.matches(':focus-visible'))}

@@ -7,6 +7,7 @@
 
 	const language = $derived(extractLanguage(page));
 
+	const navigation = { ru: 'Навигация', en: 'Navigation' };
 	const toMain = {
 		ru: 'На главную',
 		en: 'To main',
@@ -15,7 +16,7 @@
 
 <header id="back-header">
 	<Block id="back-header-navigation" borderRadius={[false, false, true, false]}>
-		<nav>
+		<nav aria-label={localize(navigation)}>
 			<a href={resolve(`/${language}`)}>{localize(toMain)}</a>
 		</nav>
 	</Block>

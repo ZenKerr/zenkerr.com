@@ -2,6 +2,7 @@
 	import { CaretDoubleUpIcon } from 'phosphor-svelte';
 	import { onMount } from 'svelte';
 	import { afterNextPaint } from '$lib/utils/helpers';
+	import { localize } from '$lib/utils/localization';
 
 	let isHidden = $state(true);
 	let withTransition = $state(false);
@@ -14,6 +15,11 @@
 
 		afterNextPaint(() => (withTransition = true));
 	});
+
+	const backToTop = {
+		ru: 'Наверх',
+		en: 'Back to top',
+	};
 </script>
 
 <svelte:window onscroll={handleScroll} />
@@ -21,6 +27,8 @@
 <button
 	id="to-top"
 	class={[isHidden && 'hidden', withTransition && 'with-transition']}
+	inert={isHidden}
+	aria-label={localize(backToTop)}
 	onclick={scrollToTop}
 >
 	<CaretDoubleUpIcon id="to-top-icon" />

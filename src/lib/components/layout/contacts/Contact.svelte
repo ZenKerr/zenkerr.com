@@ -1,18 +1,25 @@
 <script lang="ts">
 	import type { Component } from 'svelte';
 	import Block from '$lib/components/shared/Block.svelte';
+	import { localize } from '$lib/utils/localization';
 
 	interface Props {
 		icon: Component;
+		name: string;
 		href: string;
 		text: string;
 	}
 
 	let isHovered = $state(false);
 
-	const { icon: Icon, href, text }: Props = $props();
+	const { icon: Icon, name, href, text }: Props = $props();
 
 	const borderRadius = $derived(isHovered ? [false, true, true, false] : [true]);
+
+	const writeTo = {
+		ru: 'Написать на',
+		en: 'Write to',
+	};
 </script>
 
 <div class="contact">
@@ -21,6 +28,7 @@
 			{href}
 			target="_blank"
 			rel="external"
+			aria-label="{localize(writeTo)} {name}"
 			onmouseenter={() => (isHovered = true)}
 			onmouseleave={() => (isHovered = false)}
 			onfocus={(event) => (isHovered = event.currentTarget.matches(':focus-visible'))}

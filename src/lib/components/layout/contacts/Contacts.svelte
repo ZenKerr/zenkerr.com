@@ -10,16 +10,26 @@
 		en: 'Contacts',
 	};
 	const contacts_ = [
-		{ icon: EnvelopeSimpleIcon, href: EMAIL_HREF, text: EMAIL_ADDRESS },
-		{ icon: TelegramLogoIcon, href: TELEGRAM_HREF, text: TELEGRAM_USERNAME },
+		{
+			icon: EnvelopeSimpleIcon,
+			name: { ru: 'Почта', en: 'Email' },
+			href: EMAIL_HREF,
+			text: EMAIL_ADDRESS,
+		},
+		{
+			icon: TelegramLogoIcon,
+			name: { ru: 'Телеграм', en: 'Telegram' },
+			href: TELEGRAM_HREF,
+			text: TELEGRAM_USERNAME,
+		},
 	];
 </script>
 
 <section id="contacts">
 	<Title text={localize(contacts)} />
 	<div>
-		{#each contacts_ as { icon, href, text } (href)}
-			<Contact {icon} {href} {text} />
+		{#each contacts_ as { icon, name, href, text } (href)}
+			<Contact {icon} name={localize(name)} {href} {text} />
 		{/each}
 	</div>
 </section>

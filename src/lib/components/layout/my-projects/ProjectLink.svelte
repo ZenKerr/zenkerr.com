@@ -2,6 +2,7 @@
 	import { LinkSimpleIcon } from 'phosphor-svelte';
 	import Writer from '$lib/components/shared/Writer.svelte';
 	import { isPhoneMediaQuery } from '$lib/utils/helpers';
+	import { localize } from '$lib/utils/localization';
 
 	interface Props {
 		href: string;
@@ -13,6 +14,11 @@
 	const isPhone = $derived(isPhoneMediaQuery.current);
 
 	const { href, text }: Props = $props();
+
+	const goToProject = {
+		ru: 'Перейти к проекту',
+		en: 'Go to project',
+	};
 </script>
 
 <a
@@ -20,6 +26,7 @@
 	{href}
 	target="_blank"
 	rel="external"
+	aria-label={localize(goToProject)}
 	onmouseenter={() => (isHovered = true)}
 	onmouseleave={() => (isHovered = false)}
 	onfocus={(event) => (isHovered = event.currentTarget.matches(':focus-visible'))}

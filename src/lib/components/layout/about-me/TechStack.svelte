@@ -11,42 +11,50 @@
 		ru: 'Мой стек',
 		en: 'My tech stack',
 	};
-	const python = {
-		title: 'Python',
-		items: [
-			{ text: 'FastAPI' },
-			{ text: 'Flask/Quart' },
-			{ text: 'Django' },
-			{ text: 'PyTelegramBotAPI' },
-			{ text: 'PyTorch' },
-			{ text: 'PyGame' },
-			{ text: 'Playwright' },
-			{ text: 'Selenium' },
+	const technologyColumns = $derived([
+		[
+			{
+				title: 'Python',
+				items: [
+					{ text: 'FastAPI' },
+					{ text: 'Flask/Quart' },
+					{ text: 'Django' },
+					{ text: 'PyTelegramBotAPI' },
+					{ text: 'PyTorch' },
+					{ text: 'PyGame' },
+					{ text: 'Playwright' },
+					{ text: 'Selenium' },
+				],
+			},
 		],
-	};
-	const rust = {
-		title: 'Rust',
-		items: [{ text: 'Axum' }, { text: 'Teloxide' }, { text: 'Egui' }],
-	};
-	const javaScriptTypeScript = {
-		title: 'JavaScript/TypeScript',
-		items: [{ text: 'Svelte' }, { text: 'React/Next.js' }, { text: 'Vue.js' }],
-	};
-	const other = $derived({
-		title: localize({
-			ru: 'Прочее',
-			en: 'Other',
-		}),
-		items: [
-			{ text: 'C/C++' },
-			{ text: 'C#' },
-			{ text: 'MySQL' },
-			{ text: 'PostgreSQL' },
-			{ text: 'SQLite' },
-			{ text: 'Nginx' },
-			{ text: 'Docker' },
+		[
+			{
+				title: 'Rust',
+				items: [{ text: 'Axum' }, { text: 'Teloxide' }, { text: 'Egui' }],
+			},
+			{
+				title: 'JavaScript/TypeScript',
+				items: [{ text: 'Svelte' }, { text: 'React/Next.js' }, { text: 'Vue.js' }],
+			},
 		],
-	});
+		[
+			{
+				title: localize({
+					ru: 'Прочее',
+					en: 'Other',
+				}),
+				items: [
+					{ text: 'C/C++' },
+					{ text: 'C#' },
+					{ text: 'MySQL' },
+					{ text: 'PostgreSQL' },
+					{ text: 'SQLite' },
+					{ text: 'Nginx' },
+					{ text: 'Docker' },
+				],
+			},
+		],
+	]);
 </script>
 
 <div id="tech-stack">
@@ -54,12 +62,12 @@
 		<h3>{localize(myTechStack)}</h3>
 	</Block>
 	<Block id="tech-stack-content" {borderRadius}>
-		{#each [[python], [rust, javaScriptTypeScript], [other]] as column, i (i)}
+		{#each technologyColumns as technologyColumn, i (i)}
 			{#if i > 0}
 				<VerticalLine class="tech-stack-delimiter" />
 			{/if}
 			<div>
-				{#each column as { title, items }, i (i)}
+				{#each technologyColumn as { title, items }, i (i)}
 					<List {title} {items} />
 				{/each}
 			</div>

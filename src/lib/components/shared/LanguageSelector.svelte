@@ -1,7 +1,13 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
-	import { ENGLISH, extractLanguage, type Language, RUSSIAN } from '$lib/utils/localization';
+	import {
+		ENGLISH,
+		extractLanguage,
+		type Language,
+		localize,
+		RUSSIAN,
+	} from '$lib/utils/localization';
 	import type { ResolvedPathname } from '$app/types';
 	import type { RouteId } from '$app/types';
 
@@ -22,16 +28,17 @@
 		}
 	}
 
+	const languageSelector = { ru: 'Выбор языка', en: 'Language selector' };
 	const buttons = [
 		{ target: ENGLISH, text: 'En' },
 		{ target: RUSSIAN, text: 'Ру' },
 	] satisfies { target: Language; text: string }[];
 </script>
 
-<nav id="language-selector">
+<nav id="language-selector" aria-label={localize(languageSelector)}>
 	{#each buttons as { target, text } (target)}
 		{#if language === target}
-			<div>{text}</div>
+			<div aria-current="true">{text}</div>
 		{:else}
 			<a href={buildHref(target)} data-sveltekit-noscroll>{text}</a>
 		{/if}
