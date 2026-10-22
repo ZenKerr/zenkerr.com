@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Footer from '$lib/components/layout/footer/Footer.svelte';
 	import TermsOfService from '$lib/components/layout/terms-of-service/TermsOfService.svelte';
-	import BackHeader from '$lib/components/layout/BackHeader.svelte';
+	import ToMainHeader from '$lib/components/layout/ToMainHeader.svelte';
 	import ToTop from '$lib/components/layout/ToTop.svelte';
 	import { localize } from '$lib/utils/localization';
 	import Content from '$lib/components/layout/Content.svelte';
@@ -27,7 +27,7 @@
 	<MetaTags {...metaTags} />
 </svelte:head>
 
-<BackHeader />
+<ToMainHeader />
 <Content>
 	<TermsOfService />
 </Content>
