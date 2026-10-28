@@ -1,6 +1,6 @@
 {
 	"name": "zenkerr.com",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"engines": {
 		"node": "24.19.0"
 	},
